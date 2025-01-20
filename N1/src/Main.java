@@ -1,8 +1,13 @@
-import java.util.*;
+import game.Game;
+
+import java.io.FileNotFoundException;
 
 public class Main {
+
+    //global variable for Exercise 3
+    final static private String fileUrl = "C:\\Users\\strou\\OneDrive\\Documentos\\Programación\\JAVA\\JAVA_IT\\1.3_collections\\N1\\assets\\countries.txt";
     public static void main(String[] args) {
-        //  Exercise 1
+        /*//  Exercise 1
         System.out.println("+++Exercise 1 \n");
         ArrayList<Month> months = new ArrayList<>();
         months.add(new Month("January"));
@@ -50,6 +55,14 @@ public class Main {
         while (secondIt.hasPrevious())
             secondIntegerList.add(secondIt.previous());
         for (Integer integer: secondIntegerList)
-            System.out.println(integer);
+            System.out.println(integer);*/
+
+        //Exercise 3
+        try{
+            Game game = new Game(fileUrl);
+            game.playATurn();
+        }catch (FileNotFoundException e){
+            System.out.println(e.getMessage());
+        }
     }
 }
