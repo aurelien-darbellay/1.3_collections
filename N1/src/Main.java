@@ -1,11 +1,11 @@
 import game.Game;
 
-import java.io.FileNotFoundException;
-
 public class Main {
 
     //global variable for Exercise 3
-    final static private String fileUrl = "C:\\Users\\strou\\OneDrive\\Documentos\\Programación\\JAVA\\JAVA_IT\\1.3_collections\\N1\\assets\\countries.txt";
+    final static private String fileUrl = "N1/assets/countries.txt";
+    final static private String fileToWriteUrl = fileUrl.replaceFirst("countries.txt", "classification.txt");
+
     public static void main(String[] args) {
         /*//  Exercise 1
         System.out.println("+++Exercise 1 \n");
@@ -58,11 +58,8 @@ public class Main {
             System.out.println(integer);*/
 
         //Exercise 3
-        try{
-            Game game = new Game(fileUrl);
-            game.playATurn();
-        }catch (FileNotFoundException e){
-            System.out.println(e.getMessage());
-        }
+        Game game = new Game(fileUrl, fileToWriteUrl);
+        game.play();
+
     }
 }

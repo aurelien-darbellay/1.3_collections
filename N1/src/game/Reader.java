@@ -8,9 +8,12 @@ public class Reader {
     private File file;
     private Scanner scanner;
 
-    public Reader(String fileUrl) throws FileNotFoundException {
+    public Reader(String fileUrl) {
         this.file = new File(fileUrl);
-        this.scanner = new Scanner(this.file);
+        try {this.scanner = new Scanner(this.file);}
+        catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
     public String readWord(){
         return scanner.next();
