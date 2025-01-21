@@ -1,6 +1,4 @@
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,5 +13,12 @@ public class Main {
         restaurants.add(minor);
         restaurants.add(mano);
         System.out.println(restaurants.toString());
+        Comparator<Restaurant> restaurantComparator= new RestaurantComparator();
+        Set<Restaurant> orderedRestaurants = new TreeSet<Restaurant>(restaurantComparator);
+        orderedRestaurants.add(manor);
+        orderedRestaurants.add(menor);
+        orderedRestaurants.add(minor);
+        orderedRestaurants.forEach(restaurant->System.out.println(restaurant.getName() + " : " + restaurant.getPoints() + " points."));
+
     }
 }
