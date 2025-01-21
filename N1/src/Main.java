@@ -1,5 +1,7 @@
 import game.Game;
 
+import java.util.*;
+
 public class Main {
 
     //global variable for Exercise 3
@@ -7,7 +9,7 @@ public class Main {
     final static private String fileToWriteUrl = fileUrl.replaceFirst("countries.txt", "classification.txt");
 
     public static void main(String[] args) {
-        /*//  Exercise 1
+        //  Exercise 1
         System.out.println("+++Exercise 1 \n");
         ArrayList<Month> months = new ArrayList<>();
         months.add(new Month("January"));
@@ -54,8 +56,7 @@ public class Main {
         ListIterator<Integer> secondIt = integerList.listIterator(integerList.size());
         while (secondIt.hasPrevious())
             secondIntegerList.add(secondIt.previous());
-        for (Integer integer: secondIntegerList)
-            System.out.println(integer);*/
+        secondIntegerList.forEach(System.out::println);
 
         //Exercise 3
         Game game = new Game(fileUrl, fileToWriteUrl);
