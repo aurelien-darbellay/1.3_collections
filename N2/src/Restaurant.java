@@ -8,6 +8,7 @@ public class Restaurant {
     public Restaurant(String name, float points) {
         this.name = name;
         this.points = points;
+        System.out.println("Restaurant " + name + " created with " + points + " points.");
     }
 
     @Override
